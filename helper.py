@@ -47,15 +47,15 @@ class helper():
             init_data_buffer = []   
             data_buffer = []         
             for key in self.init_data.keys():
-                init_data_buffer.append(str(key) + '  ' + str(hex(self.init_data[key][0])) + '  ' + str(hex(self.init_data[key][0])))
+                init_data_buffer.append(str(key) + '  ' + str(hex(self.init_data[key][0])) + '  ' + str(hex(self.init_data[key][1])))
             f.write(str(init_data_buffer) + '\n')
             for data in self.stack:
                 stack_data_buffer = []
                 for key in data.keys():
-                    stack_data_buffer.append(str(key) + '  ' + str(hex(data[key][0])) + '  ' + str(hex(data[key][0])))
+                    stack_data_buffer.append(str(key) + '  ' + str(hex(data[key][0])) + '  ' + str(hex(data[key][1])))
                 f.write(str(stack_data_buffer) + '\n')
             for key in self.data.keys():
-                data_buffer.append(str(key) + '  ' + str(hex(self.data[key][0])) + '  ' + str(hex(self.data[key][0])))
+                data_buffer.append(str(key) + '  ' + str(hex(self.data[key][0])) + '  ' + str(hex(self.data[key][1])))
             f.write(str(data_buffer))
     def undo(self):
         self.data = self.stack.pop()

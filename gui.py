@@ -108,6 +108,7 @@ def delete_data(name):
     if result:
         frames[name].destroy()
         h.delete_pointer(pointer=name)
+        del frames[name]
 
 def window_init():
     for key in h.data.keys():
